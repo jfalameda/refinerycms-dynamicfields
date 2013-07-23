@@ -1,6 +1,6 @@
 # Dynamicfields extension for Refinery CMS.
 
-NOTICE: This plugin still under development
+NOTICE: This plugin is still under development
 
 ## How to build this extension as a gem
 
