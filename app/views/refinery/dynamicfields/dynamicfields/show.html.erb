@@ -1,0 +1,27 @@
+<% content_for :body_content_title do %>
+  <%= @dynamicfield.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Page</h1>
+    <p>
+      <%=raw @dynamicfield.page_id %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="dynamicfields">
+      <% @dynamicfields.each do |dynamicfield| %>
+        <li>
+          <%= link_to dynamicfield.title, refinery.dynamicfields_dynamicfield_path(dynamicfield) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

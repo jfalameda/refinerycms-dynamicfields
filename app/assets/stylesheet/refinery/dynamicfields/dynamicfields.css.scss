@@ -1,0 +1,75 @@
+
+// Module definition
+// ----------------------------
+.dynamic-fields {
+
+	.dynamic-fields-criteria-selection {
+		overflow: hidden;
+		display: inline-block;
+		margin-top: 10px;
+		.field {
+			float: left;
+			width: auto !important;
+			padding: 5px 20px 5px 30px;
+			opacity: .4;
+			&.active {
+				opacity: 10;
+			}
+		}
+		label {
+			margin-top: 0;
+		}
+	}
+
+	.dynamic-fields-criteria-group {
+		float: left;
+		position: relative;
+		input[name=criteria-selection] {
+			position: absolute;
+			top: 3px;
+			left: 5px;
+			z-index: 10;
+		}
+	}
+
+	.dynamic-fields-field-listing {
+		
+		.field {
+			float: left;
+			width: auto !important;
+			margin-right: 20px;
+			label {
+				margin-top: 0;
+			}
+		}
+		.item {
+			padding: 5px 20px;
+			overflow: hidden;
+		}
+	}
+
+}
+
+
+// Layout components definition
+// ----------------------------
+
+.l-gray-gradient {
+	background: #ededed; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ededed 0%, #c1c1c1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#c1c1c1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ededed 0%,#c1c1c1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ededed 0%,#c1c1c1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ededed 0%,#c1c1c1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ededed 0%,#c1c1c1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#c1c1c1',GradientType=0 ); /* IE6-9 */
+}
+
+.l-box {
+	overflow: hidden;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+}

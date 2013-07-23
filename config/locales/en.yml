@@ -1,0 +1,34 @@
+en:
+  refinery:
+    plugins:
+      dynamicfields:
+        title: Dynamicfields
+    dynamicfields:
+      admin:
+        dynamicfields:
+          actions:
+            create_new: Add New Dynamicfield
+            reorder: Reorder Dynamicfields
+            reorder_done: Done Reordering Dynamicfields
+          records:
+            title: Dynamicfields
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Dynamicfields yet. Click "Add New Dynamicfield" to add your first dynamicfield.
+          dynamicfield:
+            view_live_html: View this dynamicfield live <br/><em>(opens in a new window)</em>
+            edit: Edit this dynamicfield
+            delete: Remove this dynamicfield forever
+          new:
+            add_field: "Add a new field"
+            atachment_criteria: "Model atachment criteria"
+            atachment_criteria_explanation: "Here you indicate where the custom model is gonna be displayed. You can attach the model to an specific page or to pages using an specific template."
+
+      dynamicfields:
+        show:
+          other: Other Dynamicfields
+  activerecord:
+    attributes:
+      'refinery/dynamicfields/dynamicfield':
+        page_id: Page id
+      'refinery/dynamicfields/dynamicform_field':
+        field_id: Field id (to be used on the frontend)

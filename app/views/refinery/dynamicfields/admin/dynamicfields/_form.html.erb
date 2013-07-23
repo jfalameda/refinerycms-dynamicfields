@@ -1,0 +1,45 @@
+<%= nested_form_for [refinery, :dynamicfields_admin, @dynamicfield], :html => { :class => "dynamic-fields", "data-dynamic-field-new" => "" } do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @dynamicfield,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :model_name %>
+    <%= f.text_field :model_name %>
+  </div>
+  <h2><%= t(:atachment_criteria, :scope => 'refinery.dynamicfields.admin.dynamicfields.new') %></h2>
+  <div class="explanation"><%= t(:atachment_criteria_explanation, :scope => 'refinery.dynamicfields.admin.dynamicfields.new') %></div>
+  
+  <%= render "criteria_selection", :f => f %>
+
+
+  <div class="dynamic-fields-field-listing">
+    <% f.fields_for :dynamicform_fields do |builder| %>
+      <div class="item l-gray-gradient">
+        <div class="field">
+          <%= builder.label :field_label %>
+          <%= builder.text_field :field_label %>
+        </div>
+        <div class="field">
+          <%= builder.label :field_id %>
+          <%= builder.text_field :field_id %>
+        </div>
+        <div class="field">
+          <%= builder.label :field_type %>
+          <%= builder.select :field_type, options_for_select([:string, :integer, :photo, :file, :text]) %>
+        </div>
+      </div>
+    <% end %>
+      <p><%= f.link_to_add t(:add_field, :scope => 'refinery.dynamicfields.admin.dynamicfields.new'), :dynamicform_fields %></p>
+  </div>
+
+
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.dynamicfields.admin.dynamicfields.dynamicfield'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete') -%>
+<% end -%>
+
+<% content_for :javascripts, javascript_include_tag("dynamicfields.js") %>
+<% content_for :stylesheets, stylesheet_link_tag('refinery/dynamicfields/dynamicfields') %>

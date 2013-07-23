@@ -1,0 +1,28 @@
+es:
+  refinery:
+    plugins:
+      dynamicfields:
+        title: Dynamicfields
+#        article: masculino/femenino
+    dynamicfields:
+      admin:
+        dynamicfields:
+          actions:
+            create_new: Crear nuevo dynamicfield
+            reorder: Reordenar dynamicfields
+            reorder_done: Reordenación de dynamicfields completada
+          records:
+            title: Dynamicfields
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay dynamicfields todavía. Pulsa en "Crear nuevo Dynamicfield" para crear tu primer dynamicfield.
+          dynamicfield:
+            view_live_html: Ver este dynamicfield como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este dynamicfield
+            delete: Borrar este dynamicfield para siempre
+      dynamicfields:
+        show:
+          other: Otros dynamicfields
+  activerecord:
+    attributes:
+      'refinery/dynamicfields/dynamicfield':
+        page_id: Page

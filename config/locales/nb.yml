@@ -1,0 +1,27 @@
+nb:
+  refinery:
+    plugins:
+      dynamicfields:
+        title: Dynamicfields
+    dynamicfields:
+      admin:
+        dynamicfields:
+          actions:
+            create_new: Lag en ny Dynamicfield
+            reorder: Endre rekkefølgen på Dynamicfields
+            reorder_done: Ferdig å endre rekkefølgen Dynamicfields
+          records:
+            title: Dynamicfields
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Dynamicfields enda. Klikk på "Lag en ny Dynamicfield" for å legge til din første dynamicfield.
+          dynamicfield:
+            view_live_html: Vis hvordan denne dynamicfield ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne dynamicfield
+            delete: Fjern denne dynamicfield permanent
+      dynamicfields:
+        show:
+          other: Andre Dynamicfields
+  activerecord:
+    attributes:
+      'refinery/dynamicfields/dynamicfield':
+        page_id: Page

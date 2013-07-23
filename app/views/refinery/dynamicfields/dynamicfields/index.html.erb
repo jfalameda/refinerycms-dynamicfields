@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="dynamicfields">
+    <% @dynamicfields.each do |dynamicfield| %>
+      <li>
+        <%= link_to dynamicfield, refinery.dynamicfields_dynamicfield_path(dynamicfield) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

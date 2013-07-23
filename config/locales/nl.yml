@@ -1,0 +1,27 @@
+nl:
+  refinery:
+    plugins:
+      dynamicfields:
+        title: Dynamicfields
+    dynamicfields:
+      admin:
+        dynamicfields:
+          actions:
+            create_new: Maak een nieuwe Dynamicfield
+            reorder: Wijzig de volgorde van de Dynamicfields
+            reorder_done: Klaar met het wijzingen van de volgorde van de Dynamicfields
+          records:
+            title: Dynamicfields
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Dynamicfields. Druk op 'Maak een nieuwe Dynamicfield' om de eerste aan te maken.
+          dynamicfield:
+            view_live_html: Bekijk deze dynamicfield op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze dynamicfield
+            delete: Verwijder deze dynamicfield voor eeuwig
+      dynamicfields:
+        show:
+          other: Andere Dynamicfields
+  activerecord:
+    attributes:
+      'refinery/dynamicfields/dynamicfield':
+        page_id: Page
