@@ -5,6 +5,8 @@ module Refinery
 
       belongs_to :dynamicfield
 
+      validates :field_label, :field_id, :field_type, presence: true
+
       attr_accessible :page_id, :position, :dynamicfield_id, :field_label, :field_id, :field_type
 
     end
