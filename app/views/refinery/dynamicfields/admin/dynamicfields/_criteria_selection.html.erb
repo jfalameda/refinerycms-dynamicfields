@@ -4,17 +4,17 @@
 # page or page using a certain template
 %>
 <div class="dynamic-fields-criteria-selection l-box">
-
-    <div class="dynamic-fields-criteria-group">
-      <input type="radio" name="criteria-selection" checked />
+  <%= f.hidden_field :criteria %>
+    <div class="dynamic-fields-criteria-group" data-criteria-group="page_layout">
+      <input type="radio" name="criteria-selection" value="page_layout" checked />
       <div class='field l-gray-gradient active'>
         <%= f.label :page_layout %>
         <%= f.select :page_layout, options_for_select(@valid_view_templates) %>
       </div>
     </div>
 
-    <div class="dynamic-fields-criteria-group">
-      <input type="radio" name="criteria-selection" />
+    <div class="dynamic-fields-criteria-group" data-criteria-group="page_id">
+      <input type="radio" name="criteria-selection" value="page_id" />
       <div class='field l-gray-gradient'>
         <%= f.label :page_id %>
         <%= f.select :page_layout, options_for_select(@pages.map {|page| [page.title, page.id] }) %>

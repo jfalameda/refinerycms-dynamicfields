@@ -2,7 +2,7 @@ class CreateDynamicfieldsDynamicfields < ActiveRecord::Migration
 
   def up
     create_table :dynamicfields do |t|
-      t.string :criteria
+      t.string :criteria, :default => "page_layout"
       t.string :page_layout
       t.string :page_id
       t.string :model_name

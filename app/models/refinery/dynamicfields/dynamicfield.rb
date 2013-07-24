@@ -2,7 +2,7 @@ module Refinery
   module Dynamicfields
     class Dynamicfield < Refinery::Core::BaseModel
 
-      has_many :dynamicform_fields, :dependent => :destroy
+      has_many :dynamicform_fields
 
       accepts_nested_attributes_for :dynamicform_fields
 
@@ -10,7 +10,7 @@ module Refinery
 
       self.table_name = 'dynamicfields'
 
-      attr_accessible :page_layout, :model_name, :position, :dynamicform_fields, :dynamicform_fields_attributes
+      attr_accessible :criteria, :page_layout, :model_name, :position, :dynamicform_fields, :dynamicform_fields_attributes
 
       def title
         "Dynamic form"

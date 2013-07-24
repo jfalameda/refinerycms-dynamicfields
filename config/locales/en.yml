@@ -3,6 +3,7 @@ en:
     plugins:
       dynamicfields:
         title: Dynamicfields
+        tab_name: Custom fields
     dynamicfields:
       admin:
         dynamicfields:
@@ -20,6 +21,7 @@ en:
             delete: Remove this dynamicfield forever
           new:
             add_field: "Add a new field"
+            remove_field: "Delete"
             atachment_criteria: "Model atachment criteria"
             atachment_criteria_explanation: "Here you indicate where the custom model is gonna be displayed. You can attach the model to an specific page or to pages using an specific template."
 

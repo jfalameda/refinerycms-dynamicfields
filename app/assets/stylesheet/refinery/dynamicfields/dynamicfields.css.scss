@@ -7,6 +7,7 @@
 		overflow: hidden;
 		display: inline-block;
 		margin-top: 10px;
+		margin-bottom: 20px;
 		.field {
 			float: left;
 			width: auto !important;
@@ -33,8 +34,15 @@
 	}
 
 	.dynamic-fields-field-listing {
-		
+		.add_nested_fields {
+			padding-top: 20px;
+			display: inline-block;
+		}
+		.fields {
+			clear: both;
+		}
 		.field {
+
 			float: left;
 			width: auto !important;
 			margin-right: 20px;
@@ -45,6 +53,13 @@
 		.item {
 			padding: 5px 20px;
 			overflow: hidden;
+		}
+		.delete {
+			position: relative;
+			top: 15px;
+			border-bottom: 0px !important;
+			float: left;
+			margin-right: 20px;
 		}
 	}
 

@@ -12,10 +12,11 @@
   
   <%= render "criteria_selection", :f => f %>
 
-
+  <h2>Model fields</h2>
   <div class="dynamic-fields-field-listing">
-    <% f.fields_for :dynamicform_fields do |builder| %>
+    <%= f.fields_for :dynamicform_fields do |builder| %>
       <div class="item l-gray-gradient">
+        <%= builder.link_to_remove image_tag("/assets/refinery/icons/delete.png"), :class => "delete cancel confirm-delete", :data => { :confirm => "Are you sure you want to remove?" }, :tooltip =>  t(:remove_field, :scope => 'refinery.dynamicfields.admin.dynamicfields.new') %>
         <div class="field">
           <%= builder.label :field_label %>
           <%= builder.text_field :field_label %>
@@ -28,9 +29,13 @@
           <%= builder.label :field_type %>
           <%= builder.select :field_type, options_for_select([:string, :integer, :photo, :file, :text]) %>
         </div>
+
+        
       </div>
     <% end %>
-      <p><%= f.link_to_add t(:add_field, :scope => 'refinery.dynamicfields.admin.dynamicfields.new'), :dynamicform_fields %></p>
+    <div class="add-new">
+      <%= f.link_to_add t(:add_field, :scope => 'refinery.dynamicfields.admin.dynamicfields.new'), :dynamicform_fields %>
+    </div>
   </div>
 
 
