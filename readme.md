@@ -1,12 +1,13 @@
 # Dynamicfields extension for Refinery CMS.
 
-NOTICE: This plugin is still under development
+This plugins allows to create models dynamically and attach them to pages in order to request customizable information and to present it lately on the front-end.
 
-## How to build this extension as a gem
+## Instalation instructions
 
-    cd vendor/extensions/dynamicfields
-    gem build refinerycms-dynamicfields.gemspec
-    gem install refinerycms-dynamicfields.gem
+Add the gem to your Gemset file
 
-    # Sign up for a http://rubygems.org/ account and publish the gem
-    gem push refinerycms-dynamicfields.gem
+			gem 'refinerycms-dynamicfields', :git => 'https://github.com/jfalameda/refinerycms-dynamicfields.git'
+
+Run the plugin installation command
+			rails generate refinery:dynamicfields
+
