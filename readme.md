@@ -7,7 +7,7 @@ This plugin still on beta version and bugs might be found. Please repport!
 
 ![Alt text](http://josealameda.se/dynamicfields/tab.png "Plugin image")
 
-## Instalation instructions
+## Installation instructions
 
 Add the gem to your Gemset file
 
