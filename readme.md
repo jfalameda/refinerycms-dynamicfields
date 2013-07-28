@@ -26,7 +26,7 @@ Now a new tab with the name "Dynamic fields" will appear on the backend. There i
 IMPORTANT! Remember to activate the page_views on the configuration file. To to this, go to the file config/initializers/refinery/pages.rb and comment out the following lines:
 
 	config.view_template_whitelist = ["home", "show"]
-  config.use_view_templates = false
+  	config.use_view_templates = true
 
 The reason to do this is because the models can be attached to the pages based on an ID or to their templates, so a model would be used on all the pages using a certain view template.
 
