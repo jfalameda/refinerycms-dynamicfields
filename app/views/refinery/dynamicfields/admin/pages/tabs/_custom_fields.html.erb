@@ -10,7 +10,7 @@
 						<%= field.text_field :string_value %>
 					<% end %>
 					<% if field.object.dynamicform_field.field_type == "text" %>
-						<%= field.text_area :text_value %>
+						<%= field.text_area :text_value, :rows => "10" %>
 					<% end %>
 					<% if field.object.dynamicform_field.field_type == "image" %>
 						 <div class='field'>
