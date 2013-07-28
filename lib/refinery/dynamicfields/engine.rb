@@ -8,6 +8,8 @@ module Refinery
 
       config.before_initialize do
         require root+'lib/extensions/pages_controller_extensions'
+        require root+'lib/extensions/pages_helper_extensions'
+        require root+'lib/extensions/pages_model_extensions'
       end
 
 
@@ -41,7 +43,12 @@ module Refinery
       end
 
       config.to_prepare do
+
         Refinery::Admin::PagesController.send :include, Extensions::PagesController
+        Refinery::Pages::ContentPagesHelper.send :include, Extensions::PagesHelper
+        Refinery::Page.send :include, Extensions::Page
+
+        
       end
 
     end

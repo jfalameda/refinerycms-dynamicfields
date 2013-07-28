@@ -6,6 +6,8 @@ Refinery::Core::Engine.routes.append do
   end
 
   resources :dynamicform_fields
+  resources :dynamicform_values
+  resources :dynamicform_associations
 
   # Admin routes
   namespace :dynamicfields, :path => '' do

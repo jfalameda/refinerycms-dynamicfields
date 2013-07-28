@@ -20,14 +20,20 @@ class CreateDynamicfieldsDynamicfields < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :dynamicform_values do |t|
+    create_table :dynamicform_associations do |t|
+      t.integer :dynamicfield_id
       t.integer :page_id
+    end
+
+    create_table :dynamicform_values do |t|
+
       t.integer :dynamicform_field_id
+      t.integer :dynamicform_association_id
+
       t.text :text_value
-      t.integer :resource_value_id
-      t.integer :image_value_id
+      t.integer :resource_id
+      t.integer :image_id
       t.string :string_value
-      t.integer :integer_value
     end
 
   end
@@ -44,6 +50,8 @@ class CreateDynamicfieldsDynamicfields < ActiveRecord::Migration
     drop_table :dynamicfields
     drop_table :dynamicform_fields
     drop_table :dynamicform_values
+    drop_table :dynamicform_associations
+
   end
 
 end

@@ -2,7 +2,7 @@ en:
   refinery:
     plugins:
       dynamicfields:
-        title: Dynamicfields
+        title: Dynamic fields
         tab_name: Custom fields
     dynamicfields:
       admin:
@@ -24,6 +24,8 @@ en:
             remove_field: "Delete"
             atachment_criteria: "Model atachment criteria"
             atachment_criteria_explanation: "Here you indicate where the custom model is gonna be displayed. You can attach the model to an specific page or to pages using an specific template."
+          errors:
+            invalid_id: "Invalid field id format (Insert only characters, numbers or the '_' character without whitespaces)"
 
       dynamicfields:
         show:

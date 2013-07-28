@@ -1,1 +1,45 @@
-This is an example :)
+<div class="customform wym_skin_refinery">
+	<%= f.fields_for :dynamicform_associations do |association| %>
+		<fieldset class="customform-model l-box">
+			<h2><%= association.object.dynamicfield.model_name %></h2>
+			
+			<%= association.fields_for :dynamicform_values do |field| %>
+				<div class="field">
+					<label><%= field.object.dynamicform_field.field_label %></label>
+					<% if field.object.dynamicform_field.field_type == "string" %>
+						<%= field.text_field :string_value %>
+					<% end %>
+					<% if field.object.dynamicform_field.field_type == "text" %>
+						<%= field.text_area :text_value %>
+					<% end %>
+					<% if field.object.dynamicform_field.field_type == "image" %>
+						 <div class='field'>
+				     <%= render '/refinery/admin/image_picker',
+				               :f => field,
+				               :field => :image_id,
+				               :image => field.object.image,
+				               :toggle_image_display => false -%>
+				  </div>
+					<% end %>
+					<% if field.object.dynamicform_field.field_type == "file" %>
+						 <div class='field'>
+					    <%= render '/refinery/admin/resource_picker',
+					               :f => field,
+					               :field => :resource_id,
+					               :resource => field.object.resource -%>
+					  </div>
+					<% end %>
+					<% if field.object.dynamicform_field.field_type == "wyswyg" %>
+					<div class='field'>
+				    <%= render '/refinery/admin/wysiwyg',
+				                :f => field,
+				                :fields => [:text_value],
+				                :object => "dynamicfields/dynamicform_value" -%>
+				  </div>
+  				<% end %>
+				</div>
+			<% end %>
+		</fieldset>
+	<% end %>
+</div>
+<% content_for :stylesheets, stylesheet_link_tag('refinery/dynamicfields/dynamicfields') %>

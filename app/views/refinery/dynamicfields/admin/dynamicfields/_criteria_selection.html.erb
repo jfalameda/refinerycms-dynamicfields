@@ -9,7 +9,7 @@
       <input type="radio" name="criteria-selection" value="page_layout" checked />
       <div class='field l-gray-gradient active'>
         <%= f.label :page_layout %>
-        <%= f.select :page_layout, options_for_select(@valid_view_templates) %>
+        <%= f.select :page_layout, options_for_select(@valid_view_templates, f.object.page_layout) %>
       </div>
     </div>
 
@@ -17,7 +17,7 @@
       <input type="radio" name="criteria-selection" value="page_id" />
       <div class='field l-gray-gradient'>
         <%= f.label :page_id %>
-        <%= f.select :page_layout, options_for_select(@pages.map {|page| [page.title, page.id] }) %>
+        <%= f.select :page_id, options_for_select(@pages.map {|page| [page.title, page.id] }, f.object.page_id) %>
       </div>
     </div>
 

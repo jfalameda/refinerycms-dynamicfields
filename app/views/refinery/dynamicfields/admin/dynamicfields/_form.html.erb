@@ -27,7 +27,7 @@
         </div>
         <div class="field">
           <%= builder.label :field_type %>
-          <%= builder.select :field_type, options_for_select([:string, :integer, :photo, :file, :text]) %>
+          <%= builder.select :field_type, options_for_select([:string, :text, :wyswyg, :image, :file], builder.object.field_type) %>
         </div>
 
         
