@@ -41,6 +41,8 @@ The reason to do this is because the models can be attached to the pages based o
 7. Now edit the page we choosed to attach the model to and on the "Custom fields" tab the form will be displayed.
 8. Enjoy, report bugs and collaborate!
 
+![Alt text](http://josealameda.se/dynamicfields/page_tab.png "Plugin image")
+
 ## Retrieve the filled fields on the template
 
 In order to retrieve the custom filled information, a helper is provided
