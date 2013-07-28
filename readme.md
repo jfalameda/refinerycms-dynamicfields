@@ -5,6 +5,8 @@ This plugins allows to create models dynamically and attach them to pages in ord
 Author: José Fernández Alameda.
 This plugin still on beta version and bugs might be found. Please repport!
 
+![Alt text](http://josealameda.se/dynamicfields/tab.png "Plugin image")
+
 ## Instalation instructions
 
 Add the gem to your Gemset file
