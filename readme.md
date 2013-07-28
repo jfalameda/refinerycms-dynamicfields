@@ -5,5 +5,6 @@ This plugins allows to create models dynamically and attach them to pages in ord
 ## Instalation instructions
 
 Add the gem to your Gemset file
-    https://github.com/jfalameda/refinerycms-dynamicfields.git
+
+  https://github.com/jfalameda/refinerycms-dynamicfields.git
 
