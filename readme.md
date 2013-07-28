@@ -11,7 +11,7 @@ This plugin still on beta version and bugs might be found. Please repport!
 
 Add the gem to your Gemset file
 
-			gem 'refinerycms-dynamicfields', :git => 'https://github.com/jfalameda/refinerycms-dynamicfields.git'
+	gem 'refinerycms-dynamicfields', :git => 'https://github.com/jfalameda/refinerycms-dynamicfields.git'
 
 Run the plugin installation command
 
