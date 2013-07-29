@@ -3,7 +3,8 @@
 This plugin allows you to create models dynamically and attach them to pages in order to request customizable information and to present it later on the front-end.
 
 Author: José Fernández Alameda.
-This plugin still is still in beta and bugs might be found. Please report!
+
+This plugin is still in beta and bugs might be found. Please report!
 
 ![Plugin image](http://josealameda.se/dynamicfields/tab.png "Plugin image")
 
