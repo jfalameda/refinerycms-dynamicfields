@@ -1,4 +1,4 @@
-# Customfields extension for Refinery CMS.
+# Custom fields extension for Refinery CMS.
 
 This plugin allows you to create models dynamically and attach them to pages in order to request customizable information and to present it later on the front-end.
 
@@ -13,7 +13,7 @@ This plugin is still in beta and bugs might be found. Please report!
 Add the gem to your Gemfile:
 
 ```ruby
-gem 'refinerycms-customfields', :git => 'https://github.com/jfalameda/refinerycms-customfields.git'
+gem 'refinerycms-dynamicfields', :git => 'https://github.com/jfalameda/refinerycms-dynamicfields.git'
 ```
 
 Run the plugin installation command
