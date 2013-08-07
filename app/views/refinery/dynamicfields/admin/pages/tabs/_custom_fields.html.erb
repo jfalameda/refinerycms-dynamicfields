@@ -42,4 +42,10 @@
 		</fieldset>
 	<% end %>
 </div>
+<% if f.object.dynamicform_associations.blank? then  %>
+	<script>
+		window.dynamicfields_tabNoResults = true;
+	</script>
+<% end %>
+<% content_for :javascripts, javascript_include_tag("dynamicfields.js") %>
 <% content_for :stylesheets, stylesheet_link_tag('refinery/dynamicfields/dynamicfields') %>

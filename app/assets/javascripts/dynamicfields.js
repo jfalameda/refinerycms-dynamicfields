@@ -3,6 +3,34 @@
 (function(window, $) {
 
 	/**
+	* Implements the page tabs javascript
+	* functionality
+	*/
+	var DynamicFieldsPageTab = function() {
+		this.init();
+	}; DynamicFieldsPageTab.prototype = {
+		/**
+		* Constructor
+		*/
+		init: function() {
+			var $this = this;
+			if($("[id='custom_Custom fields_tab']").length > 0) {
+				$this.hideTabIfNotModels();
+			}
+		},
+
+		/**
+		* Hides the tab in case no models have been
+		* assined to the current page.
+		*/
+		hideTabIfNotModels: function() {
+			if(window["dynamicfields_tabNoResults"] === true) {
+				$("[id='custom_Custom fields_tab']").hide();
+			}
+		}
+	};
+
+	/**
 	* This objects manages the dynamic form
 	* creation.
 	*/
@@ -29,6 +57,9 @@
 			$(".dynamic-fields-criteria-group").click(function(e) {
 				$this.onCriteriaSelectionClicked($(this));
 			});
+			$("[data-field-id-source]").on("keyup input paste", function() {
+				$this.updateFieldId($(this));
+			});
 		},
 
 		/**
@@ -37,6 +68,26 @@
 		markDefaultWhenEdit: function() {
 			var value = $("#dynamicfield_criteria").val();
 			$("[data-criteria-group="+value+"]").click();
+		},
+		/**
+		* Generates automatically an ID based on the field
+		* name and inserts it on the id field.
+		* @param element The clicked element
+		*/
+		updateFieldId: function(element) {
+			value = this.generateId(element.val());
+			element.parents(".item").find("[data-field-id]").val(value);
+		},
+
+		/**
+		* Generates an ID for a given string
+		* @param str The string
+		*/
+		generateId: function(str) {
+    	var re = /[^a-z0-9]+/gi; // global and case insensitive matching of non-char/non-numeric
+    	var re2 = /^-*|-*$/g;     // get rid of any leading/trailing dashes
+    	str = str.replace(re, '_');  // perform the 1st regexp
+    	return str.replace(re2, '').toLowerCase();
 		},
 
 		/**
@@ -82,6 +133,7 @@
 	// is ready.
 	$(function() {
 		new DynamicFieldsNew();
+		new DynamicFieldsPageTab();
 	});
 
 })(window, jQuery);

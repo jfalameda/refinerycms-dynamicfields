@@ -19,11 +19,11 @@
         <%= builder.link_to_remove image_tag("/assets/refinery/icons/delete.png"), :class => "delete cancel confirm-delete", :data => { :confirm => "Are you sure you want to remove?" }, :tooltip =>  t(:remove_field, :scope => 'refinery.dynamicfields.admin.dynamicfields.new') %>
         <div class="field">
           <%= builder.label :field_label %>
-          <%= builder.text_field :field_label %>
+          <%= builder.text_field :field_label, "data-field-id-source" => "" %>
         </div>
         <div class="field">
           <%= builder.label :field_id %>
-          <%= builder.text_field :field_id %>
+          <%= builder.text_field :field_id, "data-field-id" => "" %>
         </div>
         <div class="field">
           <%= builder.label :field_type %>
