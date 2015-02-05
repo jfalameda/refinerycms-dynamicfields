@@ -2,11 +2,8 @@
 
 This plugin allows you to create models dynamically and attach them to pages in order to request customizable information and to present it later on the front-end.
 
-Author: José Fernández Alameda.
-
 This plugin is still in beta and bugs might be found. Please report!
 
-![Plugin image](http://josealameda.se/dynamicfields/tab.png "Plugin image")
 
 ## Installation instructions
 
@@ -49,8 +46,6 @@ The reason to do this is because the models can be attached to the pages based o
 6. Save the dynamicform.
 7. Now, edit the page we chose to attach the model to and on the "Custom fields" tab the form will be displayed.
 8. Enjoy, report bugs and collaborate!
-
-![Plugin image](http://josealameda.se/dynamicfields/page_tab.png "Plugin image")
 
 ## Retrieve the filled fields on the template
 
