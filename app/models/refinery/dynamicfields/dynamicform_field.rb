@@ -17,19 +17,14 @@ module Refinery
 
       validates :field_label, :field_id, :field_type, presence: true
 
-      # TODO : Add permit params (rails 4+)
-      # attr_accessible :page_id, :position, :dynamicfield_id, :field_label, :field_id, :field_type, :dynamicform_values, :dynamicform_values_attributes
-
       after_create :update_dynamicform_associations
 
       def update_dynamicform_associations
-
   			if associations = dynamicfield.dynamicform_associations
   				associations.each do |association|
   					association.update_dynamicform(self)
   				end
   			end
-
   		end
 
     end

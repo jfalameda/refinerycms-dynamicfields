@@ -4,11 +4,9 @@ module Refinery
 			self.table_name = 'dynamicform_associations'
 
 			has_many :dynamicform_values
+
 			belongs_to :dynamicfield
 			belongs_to :page, :class_name => "Refinery::Page"
-
-			# TODO : Add permit params (rails 4+)
-			# attr_accessible :dynamicfield_id, :page_id, :dynamicform_values_attributes
 
 			accepts_nested_attributes_for :dynamicform_values
 
