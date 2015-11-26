@@ -12,22 +12,16 @@ module Refinery
 
 			def clone_dynamicform(dynamicform)
 				dynamicform.dynamicform_fields.each do |dynamicform_field|
-
 					update_dynamicform(dynamicform_field)
-					
 				end
 			end
 
 			def update_dynamicform(dynamicform_field)
-
 				value = Refinery::Dynamicfields::DynamicformValue.new
 				# Attaching to the model field
 				value.dynamicform_field_id = dynamicform_field.id
-
 				dynamicform_values << value
-				
 			end
-
 		end
 	end
 end
