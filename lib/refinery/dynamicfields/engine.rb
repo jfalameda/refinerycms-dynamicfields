@@ -18,10 +18,6 @@ module Refinery
           plugin.name = "dynamicfields"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.dynamicfields_admin_dynamicfields_path }
           plugin.pathname = root
-          plugin.activity = {
-            :class_name => :'refinery/dynamicfields/dynamicfield'
-          }
-          
         end
       end
 
