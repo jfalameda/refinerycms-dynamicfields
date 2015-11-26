@@ -1,7 +1,7 @@
 <div class="customform wym_skin_refinery">
 	<%= f.fields_for :dynamicform_associations do |association| %>
 		<fieldset class="customform-model l-box">
-			<h2><%= association.object.dynamicfield.model_name %></h2>
+			<h2><%= association.object.dynamicfield.model_title %></h2>
 			
 			<%= association.fields_for :dynamicform_values do |field| %>
 				<div class="field">

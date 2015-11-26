@@ -7,12 +7,12 @@ module Refinery
 
       accepts_nested_attributes_for :dynamicform_fields, :allow_destroy => true
 
-      validates :model_name, presence: true
+      validates :model_title, presence: true
 
       self.table_name = 'dynamicfields'
 
       # TODO : Add permit params (rails 4+)
-      # attr_accessible :criteria, :page_layout, :page_id, :model_name, :position, :dynamicform_fields, :dynamicform_fields_attributes
+      # attr_accessible :criteria, :page_layout, :page_id, :model_title, :position, :dynamicform_fields, :dynamicform_fields_attributes
 
       after_save :track_changes
 

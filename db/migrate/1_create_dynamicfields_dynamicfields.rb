@@ -5,7 +5,7 @@ class CreateDynamicfieldsDynamicfields < ActiveRecord::Migration
       t.string :criteria, :default => "page_layout"
       t.string :page_layout
       t.string :page_id
-      t.string :model_name
+      t.string :model_title
       t.integer :position
 
       t.timestamps
