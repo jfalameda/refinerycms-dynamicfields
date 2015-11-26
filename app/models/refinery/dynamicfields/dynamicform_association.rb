@@ -1,7 +1,6 @@
 module Refinery
 	module Dynamicfields
 		class DynamicformAssociation < Refinery::Core::BaseModel
-			self.table_name = 'dynamicform_associations'
 
 			has_many :dynamicform_values
 

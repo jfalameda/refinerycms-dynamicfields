@@ -1,7 +1,6 @@
 module Refinery
   module Dynamicfields
     class DynamicformField < Refinery::Core::BaseModel
-      self.table_name = 'dynamicform_fields'
 
       validate :correct_field_id
 

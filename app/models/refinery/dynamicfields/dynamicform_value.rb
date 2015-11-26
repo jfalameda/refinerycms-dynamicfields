@@ -1,7 +1,6 @@
 module Refinery
 	module Dynamicfields
 		class DynamicformValue < Refinery::Core::BaseModel
-			self.table_name = 'dynamicform_values'
 
 			belongs_to :dynamicform_field
 			belongs_to :dynamicform_association, dependent: :destroy

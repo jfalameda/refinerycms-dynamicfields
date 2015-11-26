@@ -9,8 +9,6 @@ module Refinery
 
       validates :model_title, presence: true
 
-      self.table_name = 'dynamicfields'
-
       after_save :track_changes
       after_save :create_model_association
 
