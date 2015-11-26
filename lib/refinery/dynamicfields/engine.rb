@@ -18,10 +18,6 @@ module Refinery
           plugin.name = "dynamicfields"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.dynamicfields_admin_dynamicfields_path }
           plugin.pathname = root
-          plugin.activity = {
-            :class_name => :'refinery/dynamicfields/dynamicfield'
-          }
-          
         end
       end
 
@@ -43,14 +39,12 @@ module Refinery
       end
 
       config.to_prepare do
-
         Refinery::Admin::PagesController.send :include, Extensions::PagesController
         Refinery::Pages::ContentPagesHelper.send :include, Extensions::PagesHelper
         Refinery::Page.send :include, Extensions::Page
 
-        
+        Rails.application.config.assets.precompile += %w( dynamicfields.js refinery/dynamicfields/dynamicfields.css )
       end
-
     end
   end
 end

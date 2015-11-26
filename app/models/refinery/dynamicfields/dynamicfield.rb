@@ -7,18 +7,12 @@ module Refinery
 
       accepts_nested_attributes_for :dynamicform_fields, :allow_destroy => true
 
-      validates :model_name, presence: true
-
-      self.table_name = 'dynamicfields'
-
-      attr_accessible :criteria, :page_layout, :page_id, :model_name, :position, :dynamicform_fields, :dynamicform_fields_attributes
+      validates :model_title, presence: true
 
       after_save :track_changes
-
       after_save :create_model_association
 
       def track_changes
-
         if(criteria_changed?)
           if(criteria_was == "page_id")
             DynamicformAssociation.where(:page_id => page_id_was, :dynamicfield_id => id).destroy_all
@@ -33,7 +27,6 @@ module Refinery
             DynamicformAssociation.joins(:page).where("refinery_pages.view_template" => page_layout_was, :dynamicfield_id => id).destroy_all
           end
         end
-
       end
 
       def create_model_association
@@ -51,8 +44,6 @@ module Refinery
       def title
         "Dynamic form"
       end
-
-
     end
   end
 end

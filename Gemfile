@@ -2,73 +2,49 @@ source "http://rubygems.org"
 
 gemspec
 
-gem 'refinerycms', '~> 2.0.3'
-gem 'refinerycms-i18n', '~> 2.0.2'
-gem "nested_form"
+git "https://github.com/refinery/refinerycms", branch: "master" do
+  gem "refinerycms"
 
+  group :test do
+    gem "refinerycms-testing"
+  end
+end
 
 # Database Configuration
-platforms :jruby do
-  gem 'activerecord-jdbcsqlite3-adapter'
-  gem 'activerecord-jdbcmysql-adapter'
-  gem 'activerecord-jdbcpostgresql-adapter'
-  gem 'jruby-openssl'
+unless ENV["TRAVIS"]
+  gem "activerecord-jdbcsqlite3-adapter", :platform => :jruby
+  gem "sqlite3", :platform => :ruby
 end
 
-platforms :ruby do
-  gem 'sqlite3'
-  gem 'mysql2'
-  gem 'pg'
+if !ENV["TRAVIS"] || ENV["DB"] == "mysql"
+  gem "activerecord-jdbcmysql-adapter", :platform => :jruby
+  gem "jdbc-mysql", "= 5.1.13", :platform => :jruby
+  gem "mysql2", :platform => :ruby
 end
 
-group :development, :test do
-  gem 'refinerycms-testing', '~> 2.0.3'
-  gem 'guard-rspec', '~> 0.7.0'
-
-  platforms :mswin, :mingw do
-    gem 'win32console', '~> 1.3.0'
-    gem 'rb-fchange', '~> 0.0.5'
-    gem 'rb-notifu', '~> 0.0.4'
-  end
-
-  platforms :ruby do
-    gem 'spork', '~> 0.9.0'
-    gem 'guard-spork', '~> 0.5.2'
-
-    unless ENV['TRAVIS']
-      require 'rbconfig'
-      if RbConfig::CONFIG['target_os'] =~ /darwin/i
-        gem 'rb-fsevent', '~> 0.9.0'
-        gem 'ruby_gntp', '~> 0.3.4'
-      end
-      if RbConfig::CONFIG['target_os'] =~ /linux/i
-        gem 'rb-inotify', '~> 0.8.8'
-        gem 'libnotify',  '~> 0.7.2'
-        gem 'therubyracer', '~> 0.10.0'
-      end
-    end
-  end
-
-  platforms :jruby do
-    unless ENV['TRAVIS']
-      require 'rbconfig'
-      if RbConfig::CONFIG['target_os'] =~ /darwin/i
-        gem 'ruby_gntp', '~> 0.3.4'
-      end
-      if RbConfig::CONFIG['target_os'] =~ /linux/i
-        gem 'rb-inotify', '~> 0.8.8'
-        gem 'libnotify',  '~> 0.7.2'
-      end
-    end
-  end
+if !ENV["TRAVIS"] || ENV["DB"] == "postgresql"
+  gem "activerecord-jdbcpostgresql-adapter", :platform => :jruby
+  gem "pg", :platform => :ruby
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
+gem "jruby-openssl", :platform => :jruby
+
+# Refinery/rails should pull in the proper versions of these
 group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
+  gem "sass-rails"
+  gem "coffee-rails"
+  gem "uglifier"
 end
 
-gem 'jquery-rails', '~> 2.0.0'
+group :development do
+  gem 'quiet_assets'
+end
+
+group :test do
+  gem "launchy"
+end
+
+# Load local gems according to Refinery developer preference.
+if File.exist? local_gemfile = File.expand_path("../.gemfile", __FILE__)
+  eval File.read(local_gemfile)
+end
