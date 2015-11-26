@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-dynamicfields'
   s.authors           = 'José Fernández Alameda'
-  s.version           = '1.0'
+  s.version           = '3.0.0'
   s.description       = 'Ruby on Rails Dynamicfields extension for Refinery CMS'
   s.date              = '2013-07-20'
   s.summary           = 'Dynamicfields extension for Refinery CMS'
