@@ -5,8 +5,8 @@ module Refinery
 
         crudify :'refinery/dynamicfields/dynamicfield', :xhr_paging => true
 
-        before_filter :attach_listings, :only => [:create, :new, :edit, :update]
-        # @override
+        before_action :attach_listings, only: [:create, :new, :edit, :update]
+        
         def new
 
           # Creating a new Dynamicfield object
