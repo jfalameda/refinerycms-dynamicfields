@@ -3,7 +3,7 @@ module Refinery
     module Admin
       class DynamicfieldsController < ::Refinery::AdminController
 
-        crudify :'refinery/dynamicfields/dynamicfield', :xhr_paging => true
+        crudify :'refinery/dynamicfields/dynamicfield'
 
         before_action :attach_listings, only: [:create, :new, :edit, :update]
         
