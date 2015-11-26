@@ -3,15 +3,14 @@
 db/*.sqlite3
 db/*.sqlite3-journal
 *.log
-tmp
 tmp/**/*
 
 # Documentation
 doc/api
 doc/app
+doc/*
 .yardoc
 .yardopts
-coverage
 
 # Public Uploads
 public/system/*
@@ -30,7 +29,8 @@ index/**/*
 # Refinery Specific
 *.tmproj
 *.autobackupbyrefinery.*
-refinerycms-*.gem
+/refinerycms-*.gem
+.autotest
 
 # Mac
 .DS_Store
@@ -57,9 +57,6 @@ nbproject
 # RubyMine
 .idea
 
-# E-texteditor
-.eprj
-
 # Backup
 *~
 
@@ -74,6 +71,23 @@ capybara-*html
 .rvmrc
 .rvmrc.*
 
-# vendor/extensions dummy applications.
-vendor/extensions/**/spec/dummy
+.gems/*
+.ruby-version
+.rbenv-gemsets
 
+# REFINERY CMS DEVELOPMENT ====================================================
+# Always keep this section at the bottom.
+
+config/database.yml
+config/amazon_s3.yml
+config/rackspace_cloudfiles.yml
+your_*.*
+db/schema.rb
+
+# END REFINERY CMS DEVELOPMENT =================================================
+
+Gemfile.lock
+spec/dummy
+
+# Local Gemfile for developing without sharing dependencies
+.gemfile
