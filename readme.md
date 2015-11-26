@@ -7,6 +7,8 @@ This plugin is still in beta and bugs might be found. Please report!
 
 ## Installation instructions
 
+Version 1.1.0 is compatible with Refinery 3.0. For older versions of the CMS use version 1.0.1 of the plugin.
+
 Add the gem to your Gemfile:
 
 ```ruby
