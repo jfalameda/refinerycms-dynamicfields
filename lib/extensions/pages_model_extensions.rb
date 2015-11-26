@@ -7,7 +7,9 @@ module Extensions
 
       	has_many :dynamicform_associations, :class_name => 'Refinery::Dynamicfields::DynamicformAssociation'
 		    accepts_nested_attributes_for :dynamicform_associations
-		    attr_accessible :dynamicform_associations_attributes
+		    
+        # TODO : Add permit params (rails 4+)
+        # attr_accessible :dynamicform_associations_attributes
 
       	# This function creates a new dynamic form association
 		    # for pages. It clones a given dynamicfield object and

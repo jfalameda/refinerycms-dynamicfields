@@ -11,7 +11,8 @@ module Refinery
 
       self.table_name = 'dynamicfields'
 
-      attr_accessible :criteria, :page_layout, :page_id, :model_name, :position, :dynamicform_fields, :dynamicform_fields_attributes
+      # TODO : Add permit params (rails 4+)
+      # attr_accessible :criteria, :page_layout, :page_id, :model_name, :position, :dynamicform_fields, :dynamicform_fields_attributes
 
       after_save :track_changes
 
