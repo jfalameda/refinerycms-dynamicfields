@@ -39,14 +39,12 @@ module Refinery
       end
 
       config.to_prepare do
-
         Refinery::Admin::PagesController.send :include, Extensions::PagesController
         Refinery::Pages::ContentPagesHelper.send :include, Extensions::PagesHelper
         Refinery::Page.send :include, Extensions::Page
 
-        
+        Rails.application.config.assets.precompile += %w( dynamicfields.js refinery/dynamicfields/dynamicfields.css )
       end
-
     end
   end
 end
