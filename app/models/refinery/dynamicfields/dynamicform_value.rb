@@ -9,7 +9,7 @@ module Refinery
       belongs_to :resource, :class_name => '::Refinery::Resource'
 
 			def self.find_by_page_and_field_id(page_id, field_id)
-		    self.joins(:dynamicform_association, :dynamicform_field).where("dynamicform_associations.page_id" => page_id, "dynamicform_fields.field_id" => field_id).first
+		    self.joins(:dynamicform_association, :dynamicform_field).where("#{::Refinery::Dynamicfields::DynamicformAssociation.table_name}.page_id" => page_id, "#{::Refinery::Dynamicfields::DynamicformField.table_name}.field_id" => field_id).first
 		  end
 		end
 	end
