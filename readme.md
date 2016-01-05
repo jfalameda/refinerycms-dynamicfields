@@ -57,6 +57,12 @@ In order to retrieve the custom filled information, a helper is provided:
 <% get_field("field_id") %>
 ```
 
+By default the helper method will search for the field in the current page. If you wish to use a field from a specific page, you may also include a page ID:
+
+```erb
+<% get_field("another_field_id", 2) %>
+```
+
 Examples
 
 ```erb
@@ -79,5 +85,9 @@ Examples
 <p>
 	<span>Resource text (file)</span>
 	<%= link_to "Download PDF file", get_field("pdf_file").url %>
+</p>
+<p>
+	<span>Another page's field</span>
+	<%= get_field("other_text", 2) %>
 </p>
 ```

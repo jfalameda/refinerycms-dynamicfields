@@ -6,9 +6,9 @@ module Extensions
 
 	      	# Allows to retrieve a dynamic form value
 	      	# for a given page id and field id.
-	      	def get_field(field_id)
+	      	def get_field(field_id, page_id=@page.id)
 
-	      		value = Refinery::Dynamicfields::DynamicformValue.find_by_page_and_field_id(@page.id, field_id)
+	      		value = Refinery::Dynamicfields::DynamicformValue.find_by_page_and_field_id(page_id, field_id)
 	      		if value
 	      			field_type = value.dynamicform_field.field_type
 	      			if(field_type == "string" || field_type == "text")
