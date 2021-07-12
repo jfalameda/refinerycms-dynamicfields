@@ -49,7 +49,7 @@ GIT
 PATH
   remote: .
   specs:
-    refinerycms-dynamicfields (1.0)
+    refinerycms-dynamicfields (3.0.0)
       nested_form
       refinerycms-core (~> 3.0.0)
 
@@ -83,7 +83,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     acts_as_indexed (0.8.3)
-    addressable (2.3.8)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     arel (6.0.3)
     awesome_nested_set (3.0.2)
       activerecord (>= 4.0.0, < 5)
@@ -140,10 +141,12 @@ GEM
     mini_portile (0.6.2)
     minitest (5.8.3)
     multi_json (1.11.2)
+    mysql2 (0.5.3)
     nested_form (0.3.2)
     nokogiri (1.6.6.4)
       mini_portile (~> 0.6.0)
     pg (0.18.4)
+    public_suffix (4.0.6)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -225,11 +228,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-jdbcmysql-adapter
   activerecord-jdbcpostgresql-adapter
   activerecord-jdbcsqlite3-adapter
   coffee-rails
+  jdbc-mysql (= 5.1.13)
   jruby-openssl
   launchy
+  mysql2
   pg
   quiet_assets
   refinerycms!
